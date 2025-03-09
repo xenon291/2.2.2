@@ -23,7 +23,9 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public List<Car> listCars(int id) {
-        return new ArrayList<>(cars);
-
+        if (id <= 0 || id > cars.size()) {
+            return cars;
+        }
+        return cars.subList(0, id);
     }
 }

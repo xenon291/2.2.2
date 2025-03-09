@@ -3,7 +3,7 @@ package web.service;
 import java.util.List;
 import web.model.Car;
 
-public interface ServiceCar {
+public interface CarService {
 
     List<Car> listCars(int count);
 }

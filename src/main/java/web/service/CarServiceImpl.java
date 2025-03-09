@@ -7,7 +7,7 @@ import web.model.Car;
 
 import java.util.List;
 @Service
-public class CarServiceImpl implements ServiceCar {
+public class CarServiceImpl implements CarService {
 
     private final CarDao carDao;
 
@@ -16,18 +16,8 @@ public class CarServiceImpl implements ServiceCar {
         this.carDao = carDao;
     }
 
-//    @Autowired
-
-
     @Override
     public List<Car> listCars(int id){
-        List<Car> cars = carDao.listCars(id);
-        if (id <= 0 || id > cars.size()) {
-            return cars;
-        }
-        return cars.subList(0, id);
-
+        return carDao.listCars(id);
     }
-
-
 }
